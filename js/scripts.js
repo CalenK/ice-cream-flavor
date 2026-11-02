@@ -1,13 +1,11 @@
 window.addEventListener("load", function() {
   const flavors = ["Choclate", "Mint"];
-  const liElement1 = document.createElement("li");
-  const liElement2 = document.createElement("li");
   const ulElement = document.createElement("ul");
   const body = document.querySelector("body");
-  for(let flavor of flavors) {
-    liElement1.append(flavor);
-    liElement2.append(flavor);
-    ulElement.prepend(liElement1, liElement2);
-    body.append(ulElement);
-  };
+  flavors.forEach(function(flavor) {
+    const liElement = document.createElement("li");
+    liElement.append(flavor);
+    ulElement.append(liElement);
+  });
+  body.append(ulElement);
 });
